@@ -2,6 +2,7 @@
     xmlns:xs='http://www.w3.org/2001/XMLSchema'
     targetNamespace='urn:xmpp:jingle:apps:rtp:rtcp-fb:0'
     xmlns='urn:xmpp:jingle:apps:rtp:rtcp-fb:0'
+    xmlns:info='urn:xmpp:jingle:apps:rtp:info:1'
     elementFormDefault='qualified'>
 
   <xs:annotation>
@@ -10,6 +11,9 @@
       XEP-0293: http://www.xmpp.org/extensions/xep-0293.html
     </xs:documentation>
   </xs:annotation>
+  
+  <xs:import namespace='urn:xmpp:jingle:apps:rtp:info:1'
+             schemaLocation='https://xmpp.org/schemas/jingle-apps-rtp-info.xsd'/>
 
   <xs:element name='rtcp-fb'>
     <xs:complexType>
@@ -27,7 +31,7 @@
   <xs:element name='rtcp-fb-trr-int'>
     <xs:complexType>
       <xs:simpleContent>
-        <xs:extension base='empty'>
+        <xs:extension base='info:empty'>
           <xs:attribute name='value' type='xs:positiveInteger' use='required'/>
         </xs:extension>
       </xs:simpleContent>
@@ -36,7 +40,7 @@
 
   <xs:complexType name='parameterElementType'>
     <xs:simpleContent>
-      <xs:extension base='empty'>
+      <xs:extension base='info:empty'>
         <xs:attribute name='name' type='xs:string' use='required'/>
         <xs:attribute name='value' type='xs:string' use='optional'/>
       </xs:extension>

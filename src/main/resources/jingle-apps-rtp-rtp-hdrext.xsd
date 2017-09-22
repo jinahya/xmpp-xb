@@ -1,8 +1,9 @@
 <xs:schema
-    xmlns:xs='http://www.w3.org/2001/XMLSchema'
-    targetNamespace='urn:xmpp:jingle:apps:rtp:rtp-hdrext:0'
-    xmlns='urn:xmpp:jingle:apps:rtp:rtp-hdrext:0'
-    elementFormDefault='qualified'>
+  xmlns:xs='http://www.w3.org/2001/XMLSchema'
+  targetNamespace='urn:xmpp:jingle:apps:rtp:rtp-hdrext:0'
+  xmlns='urn:xmpp:jingle:apps:rtp:rtp-hdrext:0'
+  xmlns:info='urn:xmpp:jingle:apps:rtp:info:1'
+  elementFormDefault='qualified'>
 
   <xs:annotation>
     <xs:documentation>
@@ -11,19 +12,22 @@
     </xs:documentation>
   </xs:annotation>
 
+  <xs:import namespace='urn:xmpp:jingle:apps:rtp:info:1'
+             schemaLocation='https://xmpp.org/schemas/jingle-apps-rtp-info.xsd'/>
+
   <xs:element name='rtp-hdrext'>
     <xs:complexType>
       <xs:sequence>  
         <xs:element name='parameter'
-            type='parameterElementType'
-            minOccurs='0' 
-            maxOccurs='unbounded'/>
+                    type='parameterElementType'
+                    minOccurs='0' 
+                    maxOccurs='unbounded'/>
       </xs:sequence>
       <xs:attribute name='id' type='xs:unsignedInt' use='required'/>
       <xs:attribute name='uri' type='xs:string' use='required'/>
       <xs:attribute name='senders'
-                  use='optional'
-                  default='both'>
+                    use='optional'
+                    default='both'>
         <xs:simpleType>
           <xs:restriction base='xs:NCName'>
             <xs:enumeration value='both'/>
@@ -38,7 +42,7 @@
 
   <xs:complexType name='parameterElementType'>
     <xs:simpleContent>
-      <xs:extension base='empty'>
+      <xs:extension base='info:empty'>
         <xs:attribute name='name' type='xs:string' use='required'/>
         <xs:attribute name='value' type='xs:string' use='optional'/>
       </xs:extension>
