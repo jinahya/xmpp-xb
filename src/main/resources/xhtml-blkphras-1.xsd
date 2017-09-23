@@ -2,7 +2,6 @@
 <xs:schema targetNamespace="http://www.w3.org/1999/xhtml" 
            xmlns:xs="http://www.w3.org/2001/XMLSchema"
            xmlns:xml="http://www.w3.org/XML/1998/namespace" 
-           xmlns:xml="http://www.w3.org/XML/1998/namespace" 
            xmlns="http://www.w3.org/1999/xhtml">
       
   <xs:annotation>
@@ -39,8 +38,8 @@
   <!-- Inline.mix -->
   <xs:import namespace='http://www.w3.org/1999/xhtml'
              schemaLocation='https://www.w3.org/2002/08/xhtml/xhtml1-strict.xsd'/>
-  <xs:import namespace='http://www.w3.org/1999/xhtml'
-             schemaLocation='https://xmpp.org/schemas/xhtml-im-model.xsd'/>
+<!--  <xs:import namespace='http://www.w3.org/1999/xhtml'
+             schemaLocation='https://xmpp.org/schemas/xhtml-im-model.xsd'/>-->
     
   <!-- address -->
   <xs:attributeGroup name="address.attlist">

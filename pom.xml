@@ -46,7 +46,7 @@
         <executions>
           <execution>
             <goals>
-              <!--<goal>generate</goal>-->
+              <goal>generate</goal>
             </goals>
           </execution>
         </executions>
@@ -59,13 +59,11 @@
           <execution>
             <id>xjc</id>
             <goals>
-              <goal>xjc</goal>
+              <!--<goal>xjc</goal>-->
             </goals>
           </execution>
         </executions>
         <configuration>
-          <!-- The package of your generated sources -->
-          <!--<packageName>com.example.myschema</packageName>-->
           <sources>
             <source>src/main/resources</source>
           </sources>
